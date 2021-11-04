@@ -1,12 +1,12 @@
 from abc import ABC,abstractmethod
 
 class Band :
-    band_lists= []
+    instances= []
     def __init__(self,name,members):
         self.name =name
         self.members = members
 
-        Band.band_lists += self.members
+        Band.instances.append(self)
 
     def play_solo(self):
         return " solo"
@@ -19,7 +19,7 @@ class Band :
     
     @classmethod
     def to_list(cls):
-        return cls.band_lists
+        return cls.instances
 
 
 
@@ -84,7 +84,7 @@ if __name__=="__main__":
     # members = [yo,jos,jodfs]
     # jo = Band("soso",members)
     # print(x)
-    y=len(Band.band_lists)
+    y=len(Band.instances)
     print(y)
     print(Band.to_list()==[])
     pass

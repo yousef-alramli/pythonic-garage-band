@@ -119,12 +119,10 @@ def test_play_solos_for_whole_band(one_band):
 
 
 def test_class_tracks_instances():
-    print(Band.to_list())
     assert Band.to_list() == []
     the_nobodies = Band("The Nobodies", [])
     assert len(Band.instances) == 1
     assert Band.instances[0] == the_nobodies
-
 
 
 def test_to_list():
